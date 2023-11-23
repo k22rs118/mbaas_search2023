@@ -17,7 +17,7 @@
 
     function fetchAll() {
       let TestDataClass = ncmb.DataStore(db);
-      TestDataClass.order("level", true).fetchAll()
+      TestDataClass.order("level", false).fetchAll()
         .then(function(results) {
           showResults(results);
         })
@@ -54,6 +54,7 @@
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
+    <button class="btn" onclick="fetchAll()">Name</button>
   </div>
   <div id="message">message area</div>
 </body>
