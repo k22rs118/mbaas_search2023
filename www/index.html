@@ -58,10 +58,28 @@
         }) 
     }
 
+     function searchAttackLT() { 
+        let attack = parseInt($("#attack").val()); 
+        let TestDataClass = ncmb.DataStore(db); TestDataClass 
+        .lessThan("attack", attack) 
+        .fetchAll() 
+        .then(function(results) { showResults(results); 
+        }) 
+    }
+
      function searchLevelGT() { 
         let level = parseInt($("#level").val()); 
         let TestDataClass = ncmb.DataStore(db); TestDataClass 
         .greaterThan("level", level) 
+        .fetchAll() 
+        .then(function(results) { showResults(results); 
+        }) 
+    }
+
+     function searchAttackGT() { 
+        let attack = parseInt($("#attack").val()); 
+        let TestDataClass = ncmb.DataStore(db); TestDataClass 
+        .greaterThan("attack", attack) 
         .fetchAll() 
         .then(function(results) { showResults(results); 
         }) 
@@ -107,9 +125,9 @@
     <button class="btn" onclick="searchLevelLT()">Level &lt;</button>
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">Level &gt</button>
-    <button class="btn" onclick="searchLevelLT()">attack &lt;</button>
+    <button class="btn" onclick="searchAttackLT()">attack &lt;</button>
     <button class="btn" onclick="searchAttack()">attack</button>
-    <button class="btn" onclick="searchLevelGT()">attack &gt</button>
+    <button class="btn" onclick="searchAttackGT()">attack &gt</button>
   </div>
   <div id="message">message area</div>
 </body>
